@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6956773890672047198}
   - component: {fileID: 6956773890672047265}
   m_Layer: 0
-  m_Name: Disk
+  m_Name: disk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,14 +96,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c923ff819e7743d44a5d92f6ea607180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noteLeft: {fileID: 3395224020569683223, guid: 2406defb61ce24c47a004f381f147ec9,
+    type: 3}
+  noteUp: {fileID: 2641246526609816928, guid: 74aa2ed46669c994bab5433e1ccf38e9, type: 3}
+  noteDown: {fileID: 2068682944411148161, guid: f834b232c1d627545b817fae487fe027,
+    type: 3}
+  noteRight: {fileID: 6989032181836842473, guid: 24111ee26d1253f4bbfe4aad994f55b0,
+    type: 3}
   speed: 0.1
-  NoteLeft: {fileID: 3395224020569683223, guid: 2406defb61ce24c47a004f381f147ec9,
-    type: 3}
-  NoteUp: {fileID: 2641246526609816928, guid: 74aa2ed46669c994bab5433e1ccf38e9, type: 3}
-  NoteDown: {fileID: 2068682944411148161, guid: f834b232c1d627545b817fae487fe027,
-    type: 3}
-  NoteRight: {fileID: 6989032181836842473, guid: 24111ee26d1253f4bbfe4aad994f55b0,
-    type: 3}
   timer_max: 0.65
   success: 0
   fail: 0

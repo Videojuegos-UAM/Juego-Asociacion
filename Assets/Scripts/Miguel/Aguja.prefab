@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 1632554813053770185}
   - component: {fileID: 9138428010671530542}
   m_Layer: 0
-  m_Name: Aguja
+  m_Name: aguja
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
