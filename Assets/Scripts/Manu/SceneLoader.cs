@@ -5,13 +5,13 @@ using UnityEngine.SceneManagement;
 
 public static class SceneLoader 
 {
-    private enum Scene
+    public enum Scene
     {
         main,
         coffee,
     }
 
-    private static void Load (Scene scene)
+    public static void Load (Scene scene)
     {
         SceneManager.LoadScene(scene.ToString());
     }
