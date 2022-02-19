@@ -21,9 +21,9 @@ public class Food : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Destroy(gameObject);
             _scoreUpdater.score = _score;
             _scoreUpdater.Fire();
+            Destroy(gameObject);
         }
     }
 
