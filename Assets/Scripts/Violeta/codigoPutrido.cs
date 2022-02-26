@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class CodigoPutrido : MonoBehaviour
 {
-    public CodigoBicho putridoInsecto;
+    public Transform transformation; //podría haber declarado directamente el position, no hacía falta la variable
+
+    public Transform centre;
+
+    public int health;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        putridoInsecto.transformation.position = new Vector3(-12, 4, 0);
-        putridoInsecto.health = 2;
-        putridoInsecto.speed = 0.0075f;
+        transformation.position = new Vector3(-4, 12, 0);
+        health = 2;
+        speed = 0.006f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        putridoInsecto.transformation.position = Vector3.MoveTowards(putridoInsecto.transformation.position, putridoInsecto.centre.transform.position, putridoInsecto.speed);
-        if (putridoInsecto.health == 0)
+        transformation.position = Vector3.MoveTowards(transformation.position, centre.transform.position, speed);
+
+        if (health == 0)
         {
             Destroy(gameObject);
         }

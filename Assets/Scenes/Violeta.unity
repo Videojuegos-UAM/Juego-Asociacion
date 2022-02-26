@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 841025919}
   - component: {fileID: 841025923}
   m_Layer: 0
-  m_Name: Isometric Diamond
+  m_Name: elPutridoInsecto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,14 +161,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.4}
+  m_Size: {x: 3, y: 3.6}
   m_EdgeRadius: 0
 --- !u!114 &841025920
 MonoBehaviour:
@@ -182,7 +182,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c777b5da0496d264c856cc5dc40a99d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  putridoInsecto: {fileID: 0}
+  transformation: {fileID: 841025922}
+  centre: {fileID: 1123063478}
+  health: 2
+  speed: 0.0075
 --- !u!212 &841025921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -224,8 +227,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 60e668f2c96e38a45ba795733b392099, type: 3}
   m_Color: {r: 0.2781061, g: 0.4811643, b: 0.6792453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -243,13 +245,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841025918}
-  m_LocalRotation: {x: -0, y: -0, z: -0.2035381, w: 0.979067}
+  m_LocalRotation: {x: -0, y: -0, z: -0.83335286, w: 0.5527413}
   m_LocalPosition: {x: -6.14, y: 1.8, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -23.488}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -112.889}
 --- !u!114 &841025923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -259,10 +261,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 841025918}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8ecc0095c67a0a4d87dfc912ce36100, type: 3}
+  m_Script: {fileID: 11500000, guid: 2734f330dcb6fdb4b8e7a8fae9759029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bicho: {fileID: 0}
+  bicho: {fileID: 841025920}
 --- !u!1 &1123063477
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,12 +305,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1177750112}
   - component: {fileID: 1177750111}
-  m_Layer: 0
+  - component: {fileID: 1177750113}
+  m_Layer: 2
   m_Name: laFlor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!212 &1177750111
 SpriteRenderer:
@@ -351,17 +354,16 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: af999752593bd6e4f9d0e137a2052da4, type: 3}
   m_Color: {r: 0.8113208, g: 0.12552504, b: 0.12552504, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.8828125}
+  m_Size: {x: 10.23, y: 6.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
+  m_MaskInteraction: 2
   m_SpriteSortPoint: 0
 --- !u!4 &1177750112
 Transform:
@@ -372,11 +374,37 @@ Transform:
   m_GameObject: {fileID: 1177750110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1177750113
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177750110}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.82, y: 3.62}
+    newSize: {x: 10.23, y: 6.82}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 2.6}
+  m_EdgeRadius: 0
 --- !u!1 &1723068223
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +418,7 @@ GameObject:
   - component: {fileID: 1723068224}
   - component: {fileID: 1723068227}
   - component: {fileID: 1723068228}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: elSucioInsecto
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,8 +439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transformation: {fileID: 1723068226}
   centre: {fileID: 1123063478}
-  health: 0
-  speed: 0
+  health: 1
+  speed: 0.005
 --- !u!212 &1723068225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -454,11 +482,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13fd0c0869bd48d4a945964292a27f90, type: 3}
   m_Color: {r: 0.6792453, g: 0.6790493, b: 0.2716981, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
@@ -473,13 +500,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723068223}
-  m_LocalRotation: {x: -0, y: -0, z: 0.38495007, w: 0.9229374}
-  m_LocalPosition: {x: 5.87, y: 4.25, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.37949044, w: 0.9251957}
+  m_LocalPosition: {x: 4.09, y: 2.29, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45.281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -44.604}
 --- !u!61 &1723068227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -497,14 +524,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 1, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.4}
+  m_Size: {x: 2, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &1723068228
 MonoBehaviour:
@@ -597,7 +624,7 @@ Transform:
   m_GameObject: {fileID: 2099876120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

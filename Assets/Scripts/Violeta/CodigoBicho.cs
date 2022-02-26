@@ -24,6 +24,7 @@ public class CodigoBicho : MonoBehaviour
     void Update()
     {
         transformation.position = Vector3.MoveTowards(transformation.position, centre.transform.position, speed);
+
         if(health == 0)
         {
             Destroy(gameObject);
