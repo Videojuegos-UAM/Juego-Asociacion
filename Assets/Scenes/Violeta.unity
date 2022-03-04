@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformation: {fileID: 841025922}
+  flor: {fileID: 0}
   centre: {fileID: 1177750112}
   health: 2
   speed: 0.0075
@@ -390,6 +391,7 @@ GameObject:
   - component: {fileID: 1177750112}
   - component: {fileID: 1177750111}
   - component: {fileID: 1177750113}
+  - component: {fileID: 1177750114}
   m_Layer: 0
   m_Name: laFlor
   m_TagString: Untagged
@@ -489,6 +491,64 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 2.6}
   m_EdgeRadius: 0
+--- !u!114 &1177750114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177750110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aefd4c0ee1177f342b96cac0c898e631, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 30
+--- !u!1 &1188064012
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188064014}
+  - component: {fileID: 1188064013}
+  m_Layer: 0
+  m_Name: spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1188064013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188064012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9cf35fb04e330448bae122f3e4ad0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bic1: {fileID: 0}
+  bic2: {fileID: 0}
+--- !u!4 &1188064014
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188064012}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.82256275, y: 0.24506137, z: -21.86388}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1723068223
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformation: {fileID: 1723068226}
+  flor: {fileID: 0}
   centre: {fileID: 1177750112}
   health: 1
   speed: 0.005

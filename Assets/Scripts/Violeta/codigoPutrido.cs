@@ -33,4 +33,5 @@ public class CodigoPutrido : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }
