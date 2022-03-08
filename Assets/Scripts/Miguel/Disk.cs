@@ -10,6 +10,8 @@ public class Disk : MonoBehaviour{
     [SerializeField] private GameObject noteRight;
     [SerializeField] public float speed;
     [SerializeField] private float timer_max;
+    [SerializeField] private AudioSource Disk1Audio;
+
     public int success;
     public int fail;
     private float timer;
@@ -20,6 +22,7 @@ public class Disk : MonoBehaviour{
         this.success = 0;
         this.fail = 0;
         this.timer = 0;
+        Disk1Audio.Play();
     }
 
     void Start(){

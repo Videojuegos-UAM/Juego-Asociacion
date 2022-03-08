@@ -17,6 +17,7 @@ public class Note : MonoBehaviour{
     [SerializeField] Sprite defaultSprite;
     [SerializeField] Sprite shineSprite;
     [SerializeField] float timer_max = 0.1f;
+    public TrailRenderer trail;
     private bool onTrigger;
     private bool cleared;
     private SpriteRenderer spriteRenderer;
@@ -27,6 +28,7 @@ public class Note : MonoBehaviour{
         disk = GameObject.Find("Disk").GetComponent<Disk>();
         cam = GameObject.Find("Main Camera").GetComponent<CameraShake>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        trail = gameObject.GetComponent<TrailRenderer>();
         spriteRenderer.sprite = defaultSprite;
         timer_max = 0.1f;
     }
@@ -34,6 +36,10 @@ public class Note : MonoBehaviour{
     private void Awake(){
         onTrigger = false;
         cleared = false;
+        
+        int i = Random.Range(0, 2);
+        if(i<1) type = NoteType.SHORT;
+        else if(i<2) type = NoteType.LONG;
 
         if(this.direction == NoteDirection.LEFT){
             this.transform.position = new Vector3(4.25f, 0, 0);
@@ -55,16 +61,25 @@ public class Note : MonoBehaviour{
             this.transform.Rotate(new Vector3(0, 0, 0));
             this.activator = KeyCode.RightArrow;
         }
+        if(this.type == NoteType.SHORT)
+        {
+            this.trail.enabled = false;
+        }
+        if(this.type == NoteType.LONG)
+        {
+            this.trail.enabled = true;
+        }
     }
     
     void Update(){
         if(cleared == false){
             this.transform.RotateAround(new Vector3(0, 0, 0), Vector3.back, disk.speed*Time.deltaTime);
-            if (Input.GetKeyDown(activator) && onTrigger == true){
-                cleared = true;
+            if (Input.GetKeyDown(activator) && this.onTrigger == true){
+                this.cleared = true;
                 disk.success++;
-                timer = timer_max;
-                spriteRenderer.sprite = shineSprite;
+                this.timer = timer_max;
+                this.spriteRenderer.sprite = shineSprite;
+                this.spriteRenderer.color = new Color(0.8f,0.8f,0.8f,1);
                 if(this.direction == NoteDirection.LEFT){
                     this.transform.position = new Vector3(-4.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -83,23 +98,23 @@ public class Note : MonoBehaviour{
                 }
             }
         }
-        if(cleared == true){
-           timer -= Time.deltaTime;
-           if (timer <= 0){
+        if(this.cleared == true){
+           this.timer -= Time.deltaTime;
+           if (this.timer <= 0){
                 Destroy(gameObject);
             }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
-        onTrigger = true;
+        this.onTrigger = true;
     }
     
     private void OnTriggerExit2D(Collider2D collision){
-        if (cleared == false){
+        if (this.cleared == false){
             Destroy(gameObject);
             cam.TriggerShake();
-            disk.GetComponent<Disk>().fail++;
+            disk.fail++;
         }
     }
 }
