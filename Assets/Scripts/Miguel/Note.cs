@@ -61,12 +61,10 @@ public class Note : MonoBehaviour{
             this.transform.Rotate(new Vector3(0, 0, 0));
             this.activator = KeyCode.RightArrow;
         }
-        if(this.type == NoteType.SHORT)
-        {
+        if(this.type == NoteType.SHORT){
             this.trail.enabled = false;
         }
-        if(this.type == NoteType.LONG)
-        {
+        if(this.type == NoteType.LONG){
             this.trail.enabled = true;
         }
     }
@@ -75,11 +73,7 @@ public class Note : MonoBehaviour{
         if(cleared == false){
             this.transform.RotateAround(new Vector3(0, 0, 0), Vector3.back, disk.speed*Time.deltaTime);
             if (Input.GetKeyDown(activator) && this.onTrigger == true){
-                this.cleared = true;
-                disk.success++;
-                this.timer = timer_max;
-                this.spriteRenderer.sprite = shineSprite;
-                this.spriteRenderer.color = new Color(0.8f,0.8f,0.8f,1);
+                // Locate to trigger
                 if(this.direction == NoteDirection.LEFT){
                     this.transform.position = new Vector3(-4.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -96,14 +90,29 @@ public class Note : MonoBehaviour{
                     this.transform.position = new Vector3(-1.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, 180);
                 }
+                this.spriteRenderer.sprite = shineSprite;
+                this.spriteRenderer.color = new Color(0.8f,0.8f,0.8f,1); // TODO: change to same but brighter color
+                disk.success++;
+                if(this.type == NoteType.SHORT){
+                    this.cleared = true;
+                    this.timer = timer_max; // change for long
+                }
             }
         }
+        if(Input.GetKey(activator) && this.onTrigger == true && this.type == NoteType.LONG){
+            // Wait for trail, give more success points
+            /*
+                Mesh mesh = new Mesh();
+                this.trail.BakeMesh(mesh);*/
+        }
+        
         if(this.cleared == true){
            this.timer -= Time.deltaTime;
            if (this.timer <= 0){
                 Destroy(gameObject);
             }
         }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
