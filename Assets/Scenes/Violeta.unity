@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 542704713}
   m_Layer: 0
   m_Name: depositphotos_37168049-stock-photo-fresh-green-grass-top-view
-  m_TagString: Untagged
+  m_TagString: Insecto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,6 +207,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &574340935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 574340936}
+  m_Layer: 0
+  m_Name: vacio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &574340936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574340935}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &841025918
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,7 +296,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformation: {fileID: 841025922}
-  flor: {fileID: 0}
   centre: {fileID: 1177750112}
   health: 2
   speed: 0.0075
@@ -533,8 +562,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9cf35fb04e330448bae122f3e4ad0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bic1: {fileID: 0}
-  bic2: {fileID: 0}
+  bic1: {fileID: 1723068223}
+  bic2: {fileID: 841025918}
+  numBichos: 6
+  secInstantiate: 2
 --- !u!4 &1188064014
 Transform:
   m_ObjectHideFlags: 0
@@ -564,7 +595,7 @@ GameObject:
   - component: {fileID: 1723068228}
   m_Layer: 0
   m_Name: elSucioInsecto
-  m_TagString: Untagged
+  m_TagString: Insecto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -582,7 +613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transformation: {fileID: 1723068226}
-  flor: {fileID: 0}
   centre: {fileID: 1177750112}
   health: 1
   speed: 0.005

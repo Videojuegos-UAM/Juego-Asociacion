@@ -20,7 +20,6 @@ public class CodigoBicho : MonoBehaviour
         centre.transform.position = new Vector3(0, 0, 0);
         health = 1;
         speed = 0.005f;
-        totalBichos = 6;
     }
 
     // Update is called once per frame

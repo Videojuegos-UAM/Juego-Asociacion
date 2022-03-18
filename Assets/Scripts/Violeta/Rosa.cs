@@ -18,12 +18,12 @@ public class Rosa : MonoBehaviour
             Destroy(gameObject);
         }    
     }
-        void OnCollisionEnter(Collision collision)
+      /*  void onTriggerStay(Collider collision)
     {
-        if (collision.gameObject.name == "elSucioInsecto" || collision.gameObject.name == "elPutridoInsecto")
+        if (collision.gameObject.tag = "Insecto")
         {
             new WaitForSeconds(1);
             health--;
         }
-    }
+    }*/
 }

@@ -1,36 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Instantiate : MonoBehaviour
 {
-    public CodigoBicho bic1;
-    public CodigoPutrido bic2;
-    void Start()
-    {
-        for(int i = 0; i<bic1.totalBichos; i++)
-        {
-            if(i <= bic1.totalBichos / 2)
-            {
-                Instantiate(bic1, new Vector3(12 + i, 12 + i, 0), Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(bic1, new Vector3(-12+(i+bic1.totalBichos), -12 + (i + bic1.totalBichos), 0), Quaternion.identity);
-            }
-        }
+    public GameObject bic1;
+    public GameObject bic2;
 
-        for (int i = 0; i < bic1.totalBichos; i++)
-        {
-            if (i <= bic1.totalBichos / 2)
+    [SerializeField] 
+    private int numBichos = 6;
+
+    [SerializeField]
+    private float secInstantiate = 2.0f;
+
+    private Vector3 center;
+
+    //añadir un array de vectores y que elija 1 al azar
+    //poner un contador que instancie cada segundo
+
+    private void Update()
+    {
+        for (int i = 0; i < numBichos; i++) {
+            secInstantiate -= Time.deltaTime;
+            float ang = Random.value * 360;
+
+            if (secInstantiate <= 0f)
             {
-                Instantiate(bic1, new Vector3(6, 12 + i, 0), Quaternion.identity);
-            }
-            else
-            {
-                Instantiate(bic1, new Vector3(-6, -12 + (i + bic2.totalBichos), 0), Quaternion.identity);
-            }
+                Vector3 pos = RandomCircle(center, 12.5f, ang);
+                Instantiate(bic1, pos, Quaternion.LookRotation(center));
+                Instantiate(bic2, pos, Quaternion.LookRotation(center));
+                secInstantiate = 2f;
+            }    
         }
     }
-
+    Vector3 RandomCircle(Vector3 center, float radius, float ang)
+    {
+        Vector3 pos;
+        pos.x = center.x + radius * Mathf.Sin(ang * Mathf.Deg2Rad);
+        pos.y = center.y + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
+        pos.z = center.z;
+        return pos;
+    }
 }
+
+
