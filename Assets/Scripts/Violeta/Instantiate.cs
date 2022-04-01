@@ -6,31 +6,33 @@ public class Instantiate : MonoBehaviour
     public GameObject bic1;
     public GameObject bic2;
 
-    [SerializeField] 
-    private int numBichos = 6;
+    public int numBichos = 6;
 
     [SerializeField]
     private float secInstantiate = 2.0f;
 
-    private Vector3 center;
-
+    private Vector3 center = Vector3.zero;
+    
     //añadir un array de vectores y que elija 1 al azar
     //poner un contador que instancie cada segundo
 
-    private void Update()
+    private void Start()
     {
-        for (int i = 0; i < numBichos; i++) {
-            secInstantiate -= Time.deltaTime;
+        numBichos = 6;
+    }
+
+    private void Update()
+    {       secInstantiate -= Time.deltaTime;
             float ang = Random.value * 360;
 
-            if (secInstantiate <= 0f)
+            if (secInstantiate <= 0f && numBichos>0)
             {
                 Vector3 pos = RandomCircle(center, 12.5f, ang);
-                Instantiate(bic1, pos, Quaternion.LookRotation(center));
-                Instantiate(bic2, pos, Quaternion.LookRotation(center));
+                Instantiate(bic1, pos, Quaternion.identity);
+                Instantiate(bic2, pos, Quaternion.identity);
                 secInstantiate = 2f;
+                numBichos--;
             }    
-        }
     }
     Vector3 RandomCircle(Vector3 center, float radius, float ang)
     {
