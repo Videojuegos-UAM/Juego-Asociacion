@@ -22,6 +22,10 @@ public class textos : MonoBehaviour
     [SerializeField] private int cuentamuertos; 
     void Start()
     {
+        //find start del texto.cs
+        //cada bicho hace find de la compoente de texto
+
+
         saludenemiga = 12;/*instancias.numBichos * (bicho1.health+bicho2.health);*/
         cuentamuertos = 0;
     }
@@ -32,4 +36,6 @@ public class textos : MonoBehaviour
         texto.text = "Salud enemiga: " + saludenemiga.ToString();
         texto2.text = "Salud rosa: " + flor.health.ToString();
     }
+
+    /*hacer metodo que haga la operacion de salud, que codigo bicho llame a ese metodo*/
 }

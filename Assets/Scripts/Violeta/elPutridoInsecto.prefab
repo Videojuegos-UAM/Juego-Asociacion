@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5939855633950327048}
   - component: {fileID: 5939855633950327287}
   - component: {fileID: 5939855633950327051}
+  - component: {fileID: 6664451610054570939}
   m_Layer: 0
   m_Name: elPutridoInsecto
-  m_TagString: Untagged
+  m_TagString: Insecto
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +102,6 @@ MonoBehaviour:
   centre: {fileID: 3043259599556886675, guid: b50a50d62d8d9bf408a03046f51fee36, type: 3}
   health: 2
   speed: 0.0075
-  totalBichos: 0
 --- !u!61 &5939855633950327287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,3 +141,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bicho: {fileID: 5939855633950327048}
+--- !u!50 &6664451610054570939
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5939855633950327286}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

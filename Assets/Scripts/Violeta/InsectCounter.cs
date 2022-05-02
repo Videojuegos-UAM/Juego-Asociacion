@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class InsectCounter : MonoBehaviour
 {
-    public string textoo;
+    /*public string textoo;
 
     private CodigoBicho b1;
 
@@ -23,5 +23,5 @@ public class InsectCounter : MonoBehaviour
     {
         //totalBichos = 12 - b1.dead;       Si pongo esta línea sale "New Text"
         texto.text = "Quedan " + totalBichos.ToString() + " bichos verdes.";
-    }
+    }*/
 }

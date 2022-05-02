@@ -6,7 +6,8 @@ public class CodigoBicho : MonoBehaviour
 {
 
     public Transform centre;
-
+    public Rosa laflor;
+    //collider.getcomponent(coger la rosa).
     public int health;
     public float speed;
 
@@ -24,6 +25,7 @@ public class CodigoBicho : MonoBehaviour
         speed = 4f;
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -34,5 +36,11 @@ public class CodigoBicho : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    private void OnDestroy()
+    {
+        /*salud.bicho--;*/
+        /*llamar texto*/
     }
 }
