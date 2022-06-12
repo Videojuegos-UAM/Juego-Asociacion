@@ -366,6 +366,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 162.317, z: 0}
+--- !u!1 &1618861927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 176120590254754842, guid: 463b2b4b42d0f844784f92e3712cbefb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6762813560050403070}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1618861930
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618861927}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2015795311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -423,26 +443,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1135f5bcd489da04cb5f4fcb4355006b, type: 3}
---- !u!1 &2029886567 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6762813561241754265, guid: 463b2b4b42d0f844784f92e3712cbefb,
-    type: 3}
-  m_PrefabInstance: {fileID: 6762813560050403070}
-  m_PrefabAsset: {fileID: 0}
---- !u!136 &2029886568
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029886567}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1612560235339194539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -478,7 +478,7 @@ PrefabInstance:
     - target: {fileID: 1612560236663514756, guid: 3d231e646498da14186ae4d414119598,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.58
+      value: -1.7
       objectReference: {fileID: 0}
     - target: {fileID: 1612560236663514756, guid: 3d231e646498da14186ae4d414119598,
         type: 3}
@@ -529,6 +529,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 176120590254754842, guid: 463b2b4b42d0f844784f92e3712cbefb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 749756312868324747, guid: 463b2b4b42d0f844784f92e3712cbefb,
         type: 3}
       propertyPath: m_LocalPosition.x
