@@ -72,47 +72,53 @@ public class Note : MonoBehaviour{
     void Update(){
         if(cleared == false){
             this.transform.RotateAround(new Vector3(0, 0, 0), Vector3.back, disk.speed*Time.deltaTime);
+
             if (Input.GetKeyDown(activator) && this.onTrigger == true){
+                this.spriteRenderer.sprite = shineSprite;
                 // Locate to trigger
                 if(this.direction == NoteDirection.LEFT){
+                    this.spriteRenderer.color = new Color(1f, 0.5f, 0.5f,1);
                     this.transform.position = new Vector3(-4.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, 0);
                 }
                 if(this.direction == NoteDirection.UP){
+                    this.spriteRenderer.color = new Color(1f, 1f, 0.7f,1);
                     this.transform.position = new Vector3(-3.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, -90);
                 }
                 if(this.direction == NoteDirection.DOWN){
+                    this.spriteRenderer.color = new Color(0.6f, 1f, 1f,1);
                     this.transform.position = new Vector3(-2.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, 90);
                 }
                 if(this.direction == NoteDirection.RIGHT){
+                    this.spriteRenderer.color = new Color(0.65f, 1f, 0.6f,1);
                     this.transform.position = new Vector3(-1.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, 180);
                 }
-                this.spriteRenderer.sprite = shineSprite;
-                this.spriteRenderer.color = new Color(0.8f,0.8f,0.8f,1); // TODO: change to same but brighter color
                 disk.success++;
+                this.cleared = true;
                 if(this.type == NoteType.SHORT){
-                    this.cleared = true;
-                    this.timer = timer_max; // change for long
+                    this.timer = timer_max;
+                }
+                else{
+                    this.timer = timer_max*8;
                 }
             }
         }
-        if(Input.GetKey(activator) && this.onTrigger == true && this.type == NoteType.LONG){
-            // Wait for trail, give more success points
-            /*
-                Mesh mesh = new Mesh();
-                this.trail.BakeMesh(mesh);*/
-        }
         
         if(this.cleared == true){
-           this.timer -= Time.deltaTime;
            if (this.timer <= 0){
-                Destroy(gameObject);
+                if (this.type == NoteType.LONG){
+                    disk.success += 3;
+                }
+               Destroy(gameObject);
+           }
+           this.timer -= Time.deltaTime;
+           if(this.type == NoteType.LONG && !Input.GetKey(activator)){
+                 Destroy(gameObject);
             }
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision){
@@ -123,7 +129,7 @@ public class Note : MonoBehaviour{
         if (this.cleared == false){
             Destroy(gameObject);
             cam.TriggerShake();
-            disk.fail++;
+            disk.failure();
         }
     }
 }

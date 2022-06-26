@@ -13,20 +13,22 @@ public class Disk : MonoBehaviour{
     [SerializeField] private AudioSource Disk1Audio;
 
     public int success;
-    public int fail;
     private float timer;
-    private Text score;
 
     private void Awake(){
         this.transform.position = new Vector3(0, 0, 0);
         this.success = 0;
-        this.fail = 0;
         this.timer = 0;
         Disk1Audio.Play();
     }
 
+    public void failure()
+    {
+        this.success--;
+        this.transform.Rotate(new Vector3(0, 0, speed * 0.3f));
+    }
+
     void Start(){
-        score = GameObject.Find("score").GetComponent<Text>();
     }
 
     void Update(){
@@ -42,6 +44,10 @@ public class Disk : MonoBehaviour{
            timer = timer_max;
         }
 
-        score.text = "Aciertos: " + success + "\nFallos: " + fail;
+        if (!Disk1Audio.isPlaying)
+        {
+            Application.Quit();
+        }
+  
     }
 }

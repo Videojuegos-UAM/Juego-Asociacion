@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour{
-    [SerializeField] private float shakeMagnitude = 0.3f;
+    [SerializeField] private float shakeMagnitude = 0.33f;
     private float shakeDuration;
     private Vector3 initialPosition;
 
@@ -25,6 +25,6 @@ public class CameraShake : MonoBehaviour{
     }
 
     public void TriggerShake(){
-        shakeDuration = 0.01f;
+        shakeDuration = 0.013f;
     }
 }

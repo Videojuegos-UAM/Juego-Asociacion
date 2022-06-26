@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6956773890672047198}
   - component: {fileID: 6956773890672047265}
   m_Layer: 0
-  m_Name: disk
+  m_Name: Disk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,8 @@ MonoBehaviour:
     type: 3}
   noteRight: {fileID: 6989032181836842473, guid: 24111ee26d1253f4bbfe4aad994f55b0,
     type: 3}
-  speed: 0.1
-  timer_max: 0.65
+  speed: 0.05
+  timer_max: 0.9
+  Disk1Audio: {fileID: 0}
   success: 0
   fail: 0
