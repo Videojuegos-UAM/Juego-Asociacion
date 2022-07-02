@@ -6,6 +6,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioSource _music;
     [SerializeField] private bool _soundNotActive;
 
+    public void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     public void SelectChange(ChangeSoundEvent changeSoundEvent)
     {
