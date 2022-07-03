@@ -5,11 +5,16 @@ public class Instantiate : MonoBehaviour
 {
     public GameObject bic1;
     public GameObject bic2;
+    public GameOver gover;
 
-    public int numBichos = 6;
+    public int numBichos;
+    public int muertos;
 
     [SerializeField]
     private float secInstantiate = 2.0f;
+    public float timerVictory = 0f;
+
+    public Rosa rosa;
 
     private Vector3 center = Vector3.zero;
     
@@ -18,7 +23,9 @@ public class Instantiate : MonoBehaviour
 
     private void Start()
     {
-        numBichos = 6;
+        numBichos = 12;
+        muertos = 0;
+        timerVictory = numBichos * 2;
     }
 
     private void Update()
@@ -31,8 +38,15 @@ public class Instantiate : MonoBehaviour
                 Instantiate(bic1, pos, Quaternion.identity);
                 Instantiate(bic2, pos, Quaternion.identity);
                 secInstantiate = 2f;
-                numBichos--;
-            }    
+                numBichos -= 2;
+            }
+
+        timerVictory -= Time.deltaTime;
+        if (timerVictory <= 0 && rosa.health > 0)
+        {
+            gover.Setup();
+        }
+
     }
     Vector3 RandomCircle(Vector3 center, float radius, float ang)
     {

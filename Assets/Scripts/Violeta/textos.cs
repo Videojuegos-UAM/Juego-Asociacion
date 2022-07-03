@@ -32,8 +32,6 @@ public class textos : MonoBehaviour
 
     void Update()
     {
-        saludenemiga -= cuentamuertos;//b1.dead;
-        texto.text = "Salud enemiga: " + saludenemiga.ToString();
         texto2.text = "Salud rosa: " + flor.health.ToString();
     }
 
