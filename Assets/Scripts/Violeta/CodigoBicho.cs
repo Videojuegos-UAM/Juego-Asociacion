@@ -12,6 +12,7 @@ public class CodigoBicho : MonoBehaviour
     public float speed;
     float seconds = 0f;
     public int destroy;
+    public Instantiate instancias;
 
     // Start is called before the first frame update
     void Start()
@@ -53,9 +54,14 @@ public class CodigoBicho : MonoBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        instancias.muertos++;
+    }
+
     /*private void OnDestroy()
     {
         /*salud.bicho--;*/
-        /*llamar texto*/
+    /*llamar texto*/
     //}
 }

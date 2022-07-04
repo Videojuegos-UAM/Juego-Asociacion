@@ -11,6 +11,8 @@ public class CodigoPutrido : MonoBehaviour
     public Rosa laflor;
     float seconds = 0f;
 
+    public Instantiate instancias;
+
     public int health; 
     public float speed;
     public int destroy;
@@ -48,7 +50,7 @@ public class CodigoPutrido : MonoBehaviour
 
     private void OnDestroy()
     {
-        
+        instancias.muertos++;   
     }
 
     void Update()
