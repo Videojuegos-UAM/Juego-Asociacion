@@ -7,4 +7,6 @@
         PlayMusic,
         PlaySfx,
         SetSound,
+        SetMusicMute,
+        SetSFXMute,
     }

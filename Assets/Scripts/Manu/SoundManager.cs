@@ -31,6 +31,12 @@ public class SoundManager : MonoBehaviour
             case SoundEventType.PlaySfx:
                 PlaySfx(changeSoundEvent.clip);
                 break;
+            case SoundEventType.SetMusicMute:
+                SetMusicMute(changeSoundEvent.enabled);
+                break;
+            case SoundEventType.SetSFXMute:
+                SetSfxMute(changeSoundEvent.enabled);
+                break;
         }
     }
 

@@ -43,7 +43,22 @@ public class SoundEmitter : ScriptableObject{
     {
         CheckAudioManager();
         _sound.newValue = value;
-        _sound.Type = SoundEventType.ChangeSfx;
+        _sound.Type = SoundEventType.ChangeMusic;
+        _sound.Fire();
+    }
+    public void SetMusicMute(bool enabled)
+    {
+        CheckAudioManager();
+        _sound.enabled = enabled;
+        _sound.Type = SoundEventType.SetMusicMute;
+        _sound.Fire();
+    }
+
+    public void SetSfxMute(bool enabled)
+    {
+        CheckAudioManager();
+        _sound.enabled = enabled;
+        _sound.Type = SoundEventType.SetSFXMute;
         _sound.Fire();
     }
 
@@ -59,7 +74,7 @@ public class SoundEmitter : ScriptableObject{
 
     private void CheckAudioManager()
     {
-        if (GameObject.Find("AudioManager") == null)
+        if (GameObject.Find("AudioManager(Clone)") == null)
         {
             Instantiate(_audioManager);
         }

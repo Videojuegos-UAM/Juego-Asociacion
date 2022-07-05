@@ -9,4 +9,5 @@ public class ChangeSoundEvent : GameEventScriptable
     public SoundEventType Type;
     public float newValue;
     public AudioClip clip;
+    public bool enabled;
 }

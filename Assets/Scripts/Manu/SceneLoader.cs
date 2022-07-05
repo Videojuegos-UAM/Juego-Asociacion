@@ -9,6 +9,11 @@ public static class SceneLoader
     {
         main,
         coffee,
+<<<<<<< Updated upstream
+=======
+        Violeta,
+        menu,
+>>>>>>> Stashed changes
     }
 
     public static void Load (Scene scene)
