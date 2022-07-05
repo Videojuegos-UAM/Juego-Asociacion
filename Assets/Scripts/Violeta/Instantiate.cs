@@ -41,7 +41,7 @@ public class Instantiate : MonoBehaviour
                 numBichos -= 2;
             }
 
-        if (muertos == numBichos) gover.Setup();
+        if (rosa.muertos == 12 && rosa.health > 0) gover.Setup();
 
     }
     Vector3 RandomCircle(Vector3 center, float radius, float ang)

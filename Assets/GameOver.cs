@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("Scenes/Violeta");
+        SceneLoader.Load(SceneLoader.Scene.main);
     }
 
 }

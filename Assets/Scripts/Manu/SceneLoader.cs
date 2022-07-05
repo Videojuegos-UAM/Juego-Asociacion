@@ -9,6 +9,7 @@ public static class SceneLoader
     {
         main,
         coffee,
+        Violeta,
     }
 
     public static void Load (Scene scene)
