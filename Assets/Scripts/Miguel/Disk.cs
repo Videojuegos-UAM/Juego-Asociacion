@@ -19,7 +19,7 @@ public class Disk : MonoBehaviour{
         this.transform.position = new Vector3(0, 0, 0);
         this.success = 0;
         this.timer = 0;
-        Disk1Audio.Play();
+        SoundEmitter.Instance().PlayMusic(Disk1Audio.clip);
     }
 
     public void failure()
@@ -46,7 +46,7 @@ public class Disk : MonoBehaviour{
 
         if (!Disk1Audio.isPlaying)
         {
-            Application.Quit();
+            SceneLoader.Load(SceneLoader.Scene.main);
         }
   
     }
