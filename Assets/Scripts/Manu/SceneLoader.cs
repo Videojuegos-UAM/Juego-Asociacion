@@ -10,6 +10,8 @@ public static class SceneLoader
         main,
         coffee,
         Violeta,
+        menu,
+        manu,
     }
 
     public static void Load (Scene scene)
