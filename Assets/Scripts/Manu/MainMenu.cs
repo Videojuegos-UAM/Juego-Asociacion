@@ -2,33 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
 
-    [SerializeField] private GameObject pausePanel;
+    private ChangeSoundEvent _sound;
+    [SerializeField] private GameObject _mainPanel, _creditsPanel;
     private bool _music = true;
     private bool _sfx = true;
     private float _musicVolume = 0.5f;
     private float _sfxVolume = 0.5f;
-
-    public void Continue()
-    {
-        pausePanel.SetActive(false);
-        Time.timeScale = 1f;
-    }
-
-    public void Pause()
-    {
-        pausePanel.SetActive(true);
-        Time.timeScale=0f;
-    }
-
+    // Start is called before the first frame update
     public void Quit()
     {
         Application.Quit();
     }
 
-    public void MainMenu()
+    public void Play()
     {
         Time.timeScale = 1f;
         SceneLoader.Load(SceneLoader.Scene.menu);
@@ -57,4 +46,15 @@ public class PauseMenu : MonoBehaviour
         SoundEmitter.Instance().SetSfxMute(b);
     }
 
+    public void Credits()
+    {
+        _creditsPanel.SetActive(true);
+        _mainPanel.SetActive(false);
+    }
+
+    public void Main()
+    {
+        _creditsPanel.SetActive(false);
+        _mainPanel.SetActive(true);
+    }
 }
