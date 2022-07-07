@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Miguel.unity
+    guid: 03909a372fa3395408b284f6a59b23c4
+  - enabled: 1
     path: Assets/Interior 1.unity
     guid: bb1ae841db8cd4643851495928d266ac
   m_configObjects: {}

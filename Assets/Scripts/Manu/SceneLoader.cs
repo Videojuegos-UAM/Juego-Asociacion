@@ -12,6 +12,7 @@ public static class SceneLoader
         Violeta,
         menu,
         manu,
+        Miguel,
     }
 
     public static void Load (Scene scene)
