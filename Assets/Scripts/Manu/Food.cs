@@ -12,10 +12,14 @@ public class Food : MonoBehaviour
     [SerializeField] private float minGravity;
     [SerializeField] private float maxGravity;
 
+    [Header("Sprites")]
+    [SerializeField] private Sprite[] sprites;
+
     private void Awake()
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.gravityScale = Random.Range(minGravity, maxGravity);
+        transform.GetComponent<SpriteRenderer>().sprite = sprites[Random.Range(0, sprites.Length)];
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

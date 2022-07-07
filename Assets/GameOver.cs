@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Scenes/Violeta");
+        SceneLoader.Load(SceneLoader.Scene.Violeta);
     }
 
     public void MainMenu()
