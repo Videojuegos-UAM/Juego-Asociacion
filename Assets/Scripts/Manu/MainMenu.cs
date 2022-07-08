@@ -20,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         Time.timeScale = 1f;
-        SceneLoader.Load(SceneLoader.Scene.menu);
+        SceneLoader.Load(SceneLoader.Scene.Garden);
     }
 
     public void ChangeMusicVolume(float f)

@@ -31,7 +31,7 @@ public class PauseMenu : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
-        SceneLoader.Load(SceneLoader.Scene.menu);
+        SceneLoader.Load(SceneLoader.Scene.MainMenu);
     }
 
     public void ChangeMusicVolume(float f)

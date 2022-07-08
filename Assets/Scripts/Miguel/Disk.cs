@@ -46,7 +46,7 @@ public class Disk : MonoBehaviour{
 
         if (!Disk1Audio.isPlaying)
         {
-            SceneLoader.Load(SceneLoader.Scene.main);
+            SceneLoader.Load(SceneLoader.Scene.Interior);
         }
   
     }

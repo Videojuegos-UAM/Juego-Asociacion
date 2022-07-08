@@ -7,12 +7,14 @@ public static class SceneLoader
 {
     public enum Scene
     {
-        main,
-        coffee,
-        Violeta,
-        menu,
-        manu,
+        MainMenu,
+        Interior,
+        Garden,
+        Kitchen,
         Miguel,
+        Coffee,
+        Cooking,
+        Violeta,
     }
 
     public static void Load (Scene scene)
