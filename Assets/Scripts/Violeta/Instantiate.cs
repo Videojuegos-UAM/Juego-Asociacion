@@ -16,6 +16,8 @@ public class Instantiate : MonoBehaviour
 
     public Rosa rosa;
 
+    public AudioClip clip;
+
     private Vector3 center = Vector3.zero;
     
     //añadir un array de vectores y que elija 1 al azar
@@ -41,8 +43,11 @@ public class Instantiate : MonoBehaviour
                 numBichos -= 2;
             }
 
-        if (rosa.muertos == 12 && rosa.health > 0) gover.Setup();
-
+        if (rosa.muertos == 12 && rosa.health > 0)
+        {
+            SoundEmitter.Instance().PlaySFX(clip);
+            gover.Setup();
+        }
     }
     Vector3 RandomCircle(Vector3 center, float radius, float ang)
     {

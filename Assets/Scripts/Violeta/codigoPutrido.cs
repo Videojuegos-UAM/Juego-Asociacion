@@ -14,6 +14,8 @@ public class CodigoPutrido : MonoBehaviour
     public int health; 
     public float speed;
     public int destroy;
+    public AudioClip clip;
+    public AudioClip clip2;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,7 @@ public class CodigoPutrido : MonoBehaviour
             
             if (seconds <= 0)
             {
+                SoundEmitter.Instance().PlaySFX(clip2);
                 seconds++;
                 laflor.RosaReduceHealth();
             }
@@ -48,6 +51,7 @@ public class CodigoPutrido : MonoBehaviour
 
     private void OnDestroy()
     {
+        SoundEmitter.Instance().PlaySFX(clip);
         laflor.muertos++;
     }
 

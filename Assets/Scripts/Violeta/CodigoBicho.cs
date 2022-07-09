@@ -12,6 +12,8 @@ public class CodigoBicho : MonoBehaviour
     public float speed;
     float seconds = 0f;
     public int destroy;
+    public AudioClip clip;
+    public AudioClip clip2;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class CodigoBicho : MonoBehaviour
             {
                 seconds++;
                 laflor.RosaReduceHealth();
+                SoundEmitter.Instance().PlaySFX(clip2);
             }
             
         }
@@ -55,6 +58,7 @@ public class CodigoBicho : MonoBehaviour
 
     private void OnDestroy()
     {
+        SoundEmitter.Instance().PlaySFX(clip);
         laflor.muertos++;
     }
 

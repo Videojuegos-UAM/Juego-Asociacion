@@ -104,6 +104,8 @@ MonoBehaviour:
   health: 2
   speed: 0.0075
   destroy: 0
+  clip: {fileID: 8300000, guid: 038edcfbffe916a469315b3bc54edb3a, type: 3}
+  clip2: {fileID: 8300000, guid: 3b203a3d963c3894cacf0e3466e45fc1, type: 3}
 --- !u!61 &5939855633950327287
 BoxCollider2D:
   m_ObjectHideFlags: 0

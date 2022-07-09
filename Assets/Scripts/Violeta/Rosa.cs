@@ -8,6 +8,7 @@ public class Rosa : MonoBehaviour
     public int health;
     public int muertos;
     public GameOver gover;
+    public AudioClip clip;
     private void Start()
     {
         seconds = 0;
@@ -40,6 +41,7 @@ public class Rosa : MonoBehaviour
         health--;
         if (health == 0)
         {
+            SoundEmitter.Instance().PlaySFX(clip);
             Destroy(gameObject);
             gover.Setup();
         }
