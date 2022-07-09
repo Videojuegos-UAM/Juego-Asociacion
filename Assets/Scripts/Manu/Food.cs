@@ -15,6 +15,8 @@ public class Food : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] private Sprite[] sprites;
 
+    [Header("Music")]
+    [SerializeField] private AudioClip clip;
     private void Awake()
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
@@ -27,6 +29,7 @@ public class Food : MonoBehaviour
         {
             _scoreUpdater.score = _score;
             _scoreUpdater.Fire();
+            SoundEmitter.Instance().PlaySFX(clip);
             Destroy(gameObject);
         }
     }

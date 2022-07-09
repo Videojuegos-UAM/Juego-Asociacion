@@ -25,12 +25,20 @@ public class Movement : MonoBehaviour
             {
                 transform.Translate(new Vector3(0, 0, Mathf.Abs(z * velocity * Time.deltaTime)));
             }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, LimiteIzquierda.position.z);
+            }
         }
         else
         {
             if (transform.position.z < LimiteDerecha.position.z)
             {
                 transform.Translate(new Vector3(0, 0, Mathf.Abs(z * velocity * Time.deltaTime)));
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, LimiteDerecha.position.z);
             }
         }
        
