@@ -887,6 +887,21 @@ PrefabInstance:
       propertyPath: Disk1Audio
       value: 
       objectReference: {fileID: 2029509563}
+    - target: {fileID: 6956773890672047265, guid: a841eb8d8091f294eba7a203a538226b,
+        type: 3}
+      propertyPath: falloAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 572c0119167c7f14d9cd3faa126d4832, type: 3}
+    - target: {fileID: 6956773890672047265, guid: a841eb8d8091f294eba7a203a538226b,
+        type: 3}
+      propertyPath: ganarAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 47a9efdfebde027419099ca2e063a3c3, type: 3}
+    - target: {fileID: 6956773890672047265, guid: a841eb8d8091f294eba7a203a538226b,
+        type: 3}
+      propertyPath: aciertoAudio
+      value: 
+      objectReference: {fileID: 8300000, guid: 988b5f35e54b31841ad590bbc4341db3, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a841eb8d8091f294eba7a203a538226b, type: 3}
 --- !u!1001 &1135320266

@@ -11,6 +11,9 @@ public class Disk : MonoBehaviour{
     [SerializeField] public float speed;
     [SerializeField] private float timer_max;
     [SerializeField] private AudioSource Disk1Audio;
+    [SerializeField] private AudioClip falloAudio;
+    [SerializeField] private AudioClip aciertoAudio;
+    [SerializeField] private AudioClip ganarAudio;
 
     public int success;
     private float timer;
@@ -26,6 +29,13 @@ public class Disk : MonoBehaviour{
     {
         this.success--;
         this.transform.Rotate(new Vector3(0, 0, speed * 0.3f));
+        SoundEmitter.Instance().PlaySFX(falloAudio);
+    }
+
+    public void successNote()
+    {
+        this.success++;
+        SoundEmitter.Instance().PlaySFX(aciertoAudio);
     }
 
     void Start(){
@@ -46,6 +56,7 @@ public class Disk : MonoBehaviour{
 
         if (!Disk1Audio.isPlaying)
         {
+            SoundEmitter.Instance().PlaySFX(ganarAudio);
             SceneLoader.Load(SceneLoader.Scene.Interior);
         }
   

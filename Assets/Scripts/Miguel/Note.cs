@@ -96,7 +96,7 @@ public class Note : MonoBehaviour{
                     this.transform.position = new Vector3(-1.25f, 0, 0);
                     this.transform.rotation = Quaternion.Euler(0, 0, 180);
                 }
-                disk.success++;
+                disk.successNote();
                 this.cleared = true;
                 if(this.type == NoteType.SHORT){
                     this.timer = timer_max;
